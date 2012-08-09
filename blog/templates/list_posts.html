@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>
+    <h1 id="">Todas las entradas</h1>
+    {% for post in posts %}
+    <li>
+        {{ post.title }} (Escrita por {{ post.author.nickname() }})<br />
+        {{ post.content|safe }}
+        <a href="/post/{{ post.key() }}">link</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>
+    <h1 id="">{{ post.title }}</h1>
+        (Escrita por {{ post.author.nickname() }})<br />
+    {{ post.content|safe }}
+</ul>
+{% endblock %}
