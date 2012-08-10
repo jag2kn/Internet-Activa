@@ -111,7 +111,10 @@
 }
 
 
-
+.imagenLogo{
+    float:left;
+    padding: 18px 0;
+}
 
 
 /**************************************************************
@@ -123,7 +126,7 @@
 }
 
 #menu ul {
-  width: 100%;
+  width: 700px;
   float: right;
   margin: 0;
   padding: 45px 0 0;
@@ -232,15 +235,15 @@
 
 /* Column widths */
 .width {
-  width: 776px;
+  width: 1000px;
 }
 
 .widthPad {
-  width: 746px;
+  width: 1000px;
 }
 
 .width25 {
-  width: 24%;
+  width: 19%;
 }
 
 .width50 {
@@ -248,7 +251,7 @@
 }
 
 .width73 {
-  width: 73%;
+  width: 80%;
 }
 
 .width75 {
@@ -485,6 +488,11 @@ ul.submenu2 a:hover {
    Modulos
  **************************************************************/
 
+.modulo{
+   width: 600px;
+   margin:0 auto;
+}
+
 .videoModulo{
 	border: 2px solid #660914;
 	background-color: black;
@@ -492,7 +500,7 @@ ul.submenu2 a:hover {
    -moz-border-radius: 20px;
    border-radius: 20px;
    padding: 10px 17px;
-   margin-bottom: 10px;
+   margin: 10px auto 10px;
 }
 
 .infoModulo .numero {

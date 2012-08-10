@@ -2,21 +2,23 @@
 
 {% block content %}
 
-<div class="videoModulo">
-    <iframe width="505" height="300" src="http://www.youtube.com/embed/6uYQ6Uk603s" frameborder="0" allowfullscreen></iframe>
-</div>
+<div class="modulo">
+    <div class="videoModulo">
+        <iframe width="560" height="300" src="http://www.youtube.com/embed/6uYQ6Uk603s" frameborder="0" allowfullscreen></iframe>
+    </div>
 
-<div class="infoModulo">
-	<div class="numero">
-		<div>{{numero}}</div>
-	</div>    
-	<div class="fecha">
-		<span class="mes">{{ mes }}</span><br>
-		<span class="dias">{{ dias }}</span>
-	</div>
-	<div class="texto">
-		<h2>{{ titulo }}</h2>
-		{{ descripcion }}
-	</div>
+    <div class="infoModulo">
+	    <div class="numero">
+		    <div>{{numero}}</div>
+	    </div>    
+	    <div class="fecha">
+		    <span class="mes">{{ mes }}</span><br>
+		    <span class="dias">{{ dias }}</span>
+	    </div>
+	    <div class="texto">
+		    <h2>{{ titulo }}</h2>
+		    {{ descripcion }}
+	    </div>
+    </div>    
 </div>    
 {% endblock %}
