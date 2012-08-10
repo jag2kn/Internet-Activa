@@ -2,13 +2,12 @@
 
 {% block content %}
 <ul>
-    <h1 id="">Todas las entradas</h1>
+    <h1>Todas las entradas</h1>
     {% for post in posts %}
-    <li>
-        {{ post.title }} (Escrita por {{ post.author.nickname() }})<br />
-        {{ post.content|safe }}
-        <a href="/post/{{ post.key() }}">link</a>
-    </li>
+        <h2>{{ post.title }}</h2>
+        (Escrita por {{ post.author.nickname() }})<br />
+        {{ post.content|safe|truncate(100) }}
+        <a href="{{ post.title }}">Ver completo</a>
     {% endfor %}
 </ul>
 {% endblock %}

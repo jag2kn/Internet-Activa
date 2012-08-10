@@ -3,7 +3,12 @@
 {% block content %}
 <ul>
     <h1 id="">{{ post.title }}</h1>
-        (Escrita por {{ post.author.nickname() }})<br />
     {{ post.content|safe }}
+    <br/>
+    (Escrita por {{ post.author.nickname() }})
+    <br/>
+    
+    <a href="/posts/edit/{{ post.title }}">Editar</a> | 
+    <a href="/posts/del/{{ post.title }}">Borrar</a>
 </ul>
 {% endblock %}

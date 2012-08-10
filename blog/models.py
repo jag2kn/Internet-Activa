@@ -5,3 +5,5 @@ class Post(db.Model):
     content = db.TextProperty(required = True)
     when = db.DateTimeProperty(auto_now_add = True)
     author = db.UserProperty(required = True)
+    #etiquetas = db.StringListProperty()
+

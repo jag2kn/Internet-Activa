@@ -29,7 +29,9 @@
   <div id="header" class="width">
 
     <div id="menu1">
-      <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Internet Activa"/> 
+      <a href="/">
+	      <img border=0 src="{{ url_for('static', filename='images/Logo.png') }}" alt="Internet Activa"/> 
+	  </a>
 
       <ul>
         <li><a href="/">Pagina inicial</a></li>
@@ -88,7 +90,8 @@
 
 
       <ul class="submenu1">
-        <li><a href="{{ url_for('list_posts') }}">Sobre Nosotros</a></li>
+        <li><a href="/nosotros">Sobre Nosotros</a></li>
+        <li><a href="{{ url_for('list_posts') }}">Todos las entradas</a></li>
         <li><a href="{{ url_for('new_post') }}">Nuevo articulo</a></li>
       </ul>
 

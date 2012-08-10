@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 id="">Editar entrada</h1>
+    <form action="{{ url_for('delete_post') }}" method="post" accept-charset="utf-8">
+        {{ form.csrf_token }}
+        <p>
+            {{ form.title.label }} :<br />
+            {{ form.title.data|safe }}<br />
+            {{ form.title|safe }}<br />
+            {% if form.title.errors %}
+            <ul class="errors">
+                {% for error in form.title.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </p>
+        <p>
+            {{ form.content.label }} :<br />
+            {{ form.content.data|safe }}<br />
+            {{ form.content|safe }}<br />
+            {% if form.content.errors %}
+            <ul class="errors">
+                {% for error in form.content.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </p>
+        <p><input type="submit" value="Eliminar entrada"/></p>
+    </form>
+{% endblock %}
