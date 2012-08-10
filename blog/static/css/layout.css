@@ -5,15 +5,25 @@
 /**************************************************************
    All page content except for footer
  **************************************************************/
-
-#content {
+#fondoPagina {
   position: relative;
   height: auto !important;
   height: 100%;
   min-height: 100%;
+  background-image:url('../images/FondoPagina.png');
+  background-repeat: repeat-x;
+  background: #e1b973; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UxYjk3MyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjMzJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(top,  #e1b973 0%, #ffffff 94px); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e1b973), color-stop(94px,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #e1b973 0%,#ffffff 94px); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #e1b973 0%,#ffffff 94px); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #e1b973 0%,#ffffff 94px); /* IE10+ */
+  background: linear-gradient(to bottom,  #e1b973 0%,#ffffff 94px); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1b973', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
+  background-position: 0 94px;
 }
-
-
 
 /**************************************************************
    Topbar with newsletter form and theme change buttons
@@ -40,52 +50,52 @@
 #header {
 	clear: both;
 	position: relative;
-	height: 5em;
+	height: 94px;
 	margin: 0 auto;
-	background: #48525B url(../images/bg/header.gif) repeat-x bottom left;
-	border-bottom: 2px solid #48525B;
-	background-color: #48525B;
+	background: #FFFFFF repeat-x bottom left;
+	background-color: #FFFFFF;
 }
 
 
-#header img {
+#menu1 > img {
   position: absolute;
-  top: 5%;
+  top: 18px;
   left: 10px;
 }
 
-#header ul {
-  margin: 3.5em 1em 0 0 !important;
-  margin: 3.5em 0.5em 0 0;
+#menu1 ul {
+  margin: 0px 0 0 0;
   padding: 0;
   float: right;
 }
 
-#header ul li {
+#menu1 ul li {
   display: inline;
   list-style: none;
 }
 
-#header ul li a {
+#menu1 ul li a {
   float: left;
-  padding: 0 1em;
-
-  font: 400 1.1em arial, sans-serif;
+  margin: 0 5px;
+  padding: 0 0 9px;
+  font: 400 1.1em Verdana, arial;
   letter-spacing: 0.1em;
   line-height: 0.8em !important;
   line-height: 1em;
+  margin: 0 5px;
 
-  color: #cccccc;
-  border-right: 1px solid #4D5760;
+  color: #650c12;
+  border-top: 9px solid #650c12;
 }
 
-#header ul li a.last {
+#menu1 ul li a.last {
   padding-right: 0;
   border-right: 0;
 }
 
-#header ul li a:hover {
-  color: #F26A92;
+#menu1 ul li a:hover {
+  color: #FF0000;
+  border-top: 9px solid #FF0000;  
 }
 
 
@@ -114,12 +124,10 @@
 
 #menu ul {
   width: 100%;
-  float: left;
+  float: right;
   margin: 0;
-  padding: 0;
-
+  padding: 45px 0 0;
   text-align: left;
-  background: #000 url(../images/bg/menu.gif) repeat-x top left;
 }
 
 #menu ul li {
@@ -130,17 +138,13 @@
 }
 
 #menu ul li a {
-  float: left;
-  width: 25%;
-  height: 4.5em;
-
-  font: 400 1.2em arial, sans-serif;
+  float: right;
+  font: 400 1.2em Verdana, arial;
   letter-spacing: 0.1em;
+  margin: 0 5px;
 
-  color: #fff;
-
-  border-top: 7px solid #000;
-  border-bottom: 15px solid #FFF;
+  color: #650c12;
+  border-bottom: 9px solid #650c12;
 }
 
 #menu ul li a span {
@@ -157,8 +161,8 @@
 
 #menu ul li a:hover,
 #menu ul li a.here {
-  background: #000;
-  border-top: 7px solid #F06890;
+  color: #FF0000;
+  border-bottom: 9px solid #FF0000;
 }
 
 #menu ul li a:hover span.desc,
@@ -216,7 +220,8 @@
   clear: both;
   float: left;
   width: 100%;
-  margin-bottom: 6em;
+  margin-bottom: 20px;
+  margin-top: 25px;
   text-align: left;
 }
 
@@ -272,13 +277,10 @@
   position: relative;
   height: 5em;
   margin: 0 auto;
-  background: #49525B url(../images/bg/header.gif) repeat-x bottom left;
 }
 
 #footer #bg ul {
   float: right;
-  margin: 3em 1em 0 0 !important;
-  margin: 3em 0.5em 0 0;
   padding: 0;
 }
 
@@ -291,7 +293,7 @@
   float: left;
   padding: 0 1em;
 
-  font: 400 1em arial, sans-serif;
+  font: 400 1em Verdana, arial;
   letter-spacing: 0.1em;
   line-height: 0.8em !important;
   line-height: 1em;
@@ -309,11 +311,6 @@
   color: #F26A92;
 }
 
-#footer #bg img {
-  position: absolute;
-  top: 6%;
-  left: 10px;
-}
 
 
 
@@ -368,14 +365,14 @@ a.submitButton img {
 
 .post .date .month {
   text-transform: uppercase;
-  font: 700 1.0em arial, sans-serif;
+  font: 700 1.0em Verdana, arial;
   color: #888;
 }
 
 .post .date .day {
   display: block;
   margin-top: -5px;
-  font: 700 2.1em arial, sans-serif;
+  font: 700 2.1em Verdana, arial;
   color: #888;
 }
 
@@ -450,7 +447,6 @@ ul.submenu2 li{
   margin: 0;
   padding: 0;
   list-style: none;
-  list-style-image: url(foo.gif); /* because IE is balls */
 }
 
 ul.submenu1 li a,
@@ -463,29 +459,101 @@ ul.submenu2 li a {
   /* End hide from IE Mac */
 
   padding: 1px 5px 1px 20px;
+  border-left: 20px solid #650c12;
 }
 
 ul.submenu1 li a {
-  background: url(../images/bg/submenu1.gif) no-repeat 5px 50%;
 }
 
 ul.submenu1 a:hover {
-  color: #888;
-  background: #B3C6C4 url(../images/bg/submenu1.gif) no-repeat 5px 50%;
+  color: #FF0000;
+  border-left: 20px solid #FF0000;
 }
 
 ul.submenu2 li a {
-  color: #426F85;
-  background: url(../images/bg/submenu2.gif) no-repeat 3px 50%;
+  color: #650c12;
 }
 
 ul.submenu2 a:hover {
-  color: #888;
-  background: #B3C6C4 url(../images/bg/submenu2.gif) no-repeat 3px 50%;
+  color: #FF0000;
 }
 
 
 
+
+/**************************************************************
+   Modulos
+ **************************************************************/
+
+.videoModulo{
+	border: 2px solid #660914;
+	background-color: black;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   padding: 10px 17px;
+   margin-bottom: 10px;
+}
+
+.infoModulo .numero {
+   border-top: 1px solid #660914;
+   background: #660914;
+   background: -webkit-gradient(linear, left top, left bottom, from(#660914), to(#660914));
+   background: -webkit-linear-gradient(top, #660914, #660914);
+   background: -moz-linear-gradient(top, #660914, #660914);
+   background: -ms-linear-gradient(top, #660914, #660914);
+   background: -o-linear-gradient(top, #660914, #660914);
+   padding: 20px 40px;
+   -webkit-border-radius: 60px;
+   -moz-border-radius: 60px;
+   border-radius: 60px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 36px;
+   text-decoration: none;
+   vertical-align: middle;
+   width: 0px;
+   height: 40px;
+   left: -40px;
+   top: 10px;
+   position: relative;
+   float:left;
+}
+.infoModulo .numero div{
+    left: -12px;
+    position: relative;
+    top: 6px;
+    width: 0;
+}
+.infoModulo .texto{
+    padding: 0 8px 0 0;
+    width: 360px;
+    color:#660914;
+    float:right;
+}
+.infoModulo .fecha{
+    border-left: 1px solid #660914;
+    color: #660914;
+    float: right;
+    font-size: 24px;
+    height: 50px;
+    margin: 5px 0;
+    padding: 20px 10px;
+}
+.infoModulo .fecha .mes{
+   font-size: 36px;
+}
+.infoModulo .fecha .dias{
+  line-height: 1.5em;
+}
+.infoModulo{
+    height: 100px;
+	border: 2px solid #660914;
+	background-color: #f2da9c;
+}
 
 
 

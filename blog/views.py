@@ -36,8 +36,11 @@ def post(key):
 
 @app.route('/modulo/<int:key>/', methods=['GET', 'POST'])
 def post(key):
-    
-    return render_template('modulo.html', key=key)
+    titulo = "Titulo"
+    descripcion = "Descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion descripcion"
+    mes = "Sep"
+    dias  = "12/23"
+    return render_template('modulo.html', numero=key, titulo=titulo, descripcion=descripcion, mes=mes, dias=dias)
 
 
 @app.route('/<string:key>', methods=['GET', 'POST'])

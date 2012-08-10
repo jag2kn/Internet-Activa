@@ -1,8 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-<ul>
-    <h1 id="">Modulo {{ key }}</h1>
+
+<div class="videoModulo">
     <iframe width="505" height="300" src="http://www.youtube.com/embed/6uYQ6Uk603s" frameborder="0" allowfullscreen></iframe>
-</ul>
+</div>
+
+<div class="infoModulo">
+	<div class="numero">
+		<div>{{numero}}</div>
+	</div>    
+	<div class="fecha">
+		<span class="mes">{{ mes }}</span><br>
+		<span class="dias">{{ dias }}</span>
+	</div>
+	<div class="texto">
+		<h2>{{ titulo }}</h2>
+		{{ descripcion }}
+	</div>
+</div>    
 {% endblock %}

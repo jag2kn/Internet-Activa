@@ -18,65 +18,60 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/layout.css') }}" media="screen, projection, tv " />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/html.css') }}" media="screen, projection, tv " />
 
-  <!-- CSS specific to current theme -->
-  <link rel="stylesheet"           type="text/css" href="{{ url_for('static', filename='css/light.css') }}" title="light" media="screen, projection, tv " />
-  <link rel="alternate stylesheet" type="text/css" href="{{ url_for('static', filename='css/dark.css') }}"  title="dark"  media="screen, projection, tv " />
-
-
 </head>
 
 <body>
 
 <!-- #content: holds all except site footer - causes footer to stick to bottom -->
-<div id="content">
+<div id="fondoPagina">
 
   <!-- #header: holds the logo and top links -->
   <div id="header" class="width">
 
-    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Internet Activa"/>
+    <div id="menu1">
+      <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Internet Activa"/> 
 
-    <ul>
-      <li><a href="/">Pagina inicial</a></li>
-      <li><a href="/nosotros">Acerca de nosotros</a></li>
-      <li><a href="/recursos">Recursos</a></li>
-      <li><a href="/contacto" class="last">Contacto</a></li>
-    </ul>
+      <ul>
+        <li><a href="/">Pagina inicial</a></li>
+        <li><a href="/nosotros">Acerca de nosotros</a></li>
+        <li><a href="/recursos">Recursos</a></li>
+        <li><a href="/contacto" class="last">Contacto</a></li>
+      </ul>
+    </div>
+    
+
+    <!-- #menu: the main large box site menu -->
+    <div id="menu" class="width">
+
+      <ul>
+        <li>
+          <a href="/contacto" onfocus="blur()">
+            <span class="title ">Contacto</span>
+          </a>
+        </li>
+        <li>
+          <a href="/modulo/3" onfocus="blur()">
+            <span class="title ">Módulo 3</span>
+                  </a>      </li>
+        <li>
+          <a href="/modulo/2" onfocus="blur()">
+            <span class="title ">Módulo 2</span>
+                  </a>      </li>
+        <li>
+          <a href="/modulo/1" onfocus="blur()">
+            <span class="title ">Módulo 1</span>
+                  </a>      </li>
+      </ul>
+
+    </div>
+    <!-- #menu end -->    
 
   </div>
   <!-- #header end -->
 
 
-  <!-- #headerImg: holds the main header image or flash -->
-  <div id="headerImg" class="width"></div>
 
 
-
-  <!-- #menu: the main large box site menu -->
-  <div id="menu" class="width">
-
-    <ul>
-      <li>
-        <a href="/modulo/1" onfocus="blur()">
-          <span class="title ">Módulo 1</span>
-          <span class="desc">Descripción corta modulo uno</span>        </a>      </li>
-      <li>
-        <a href="/modulo/2" onfocus="blur()">
-          <span class="title ">Módulo 2</span>
-          <span class="desc">Descripción corta modulo dos</span>        </a>      </li>
-      <li>
-        <a href="/modulo/3" onfocus="blur()">
-          <span class="title ">Módulo 3</span>
-          <span class="desc">Descripción corta modulo tres</span>        </a>      </li>
-      <li>
-        <a href="/contacto" onfocus="blur()">
-          <span class="title ">Contacto</span>
-          <span class="desc"></span>
-        </a>
-      </li>
-    </ul>
-
-  </div>
-  <!-- #menu end -->
 
 
 
@@ -89,7 +84,22 @@
 
 
     <!-- Left column -->
-    <div class="floatLeft width73">
+    <div class="floatLeft width25 horzPad">
+
+
+      <ul class="submenu1">
+        <li><a href="{{ url_for('list_posts') }}">Sobre Nosotros</a></li>
+        <li><a href="{{ url_for('new_post') }}">Nuevo articulo</a></li>
+      </ul>
+
+
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width73">
 
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -104,23 +114,6 @@
         {% block content %}
 
         {% endblock %}
-
-
-    </div>
-    <!-- Left column end -->
-
-
-    <!-- Right link column -->
-    <div class="floatRight width25 lightBlueBg horzPad">
-
-      <h2>OS <span class="dark">Resources</span></h2>
-
-      <ul class="submenu1">
-        <li><a href="{{ url_for('list_posts') }}">Lista de articulos</a></li>
-        <li><a href="{{ url_for('new_post') }}">Nuevo articulo</a></li>
-      </ul>
-
-
 
     </div>
     <!-- Right links column end -->
@@ -144,12 +137,12 @@
 
   <!-- #bg: applies the site width and footer background -->
   <div id="bg" class="width">
-
-    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Internet Activa"/>
-
-    <ul>
-      <li><a href="/">Inicio</a></li>
-	</ul>
+	<div class="floatLeft">
+		internet<strong>ACTIVA</strong> | Bogotá | Calle falsa 123 | (571) 1234567
+	</div>
+	<div class="floatRight">
+      <img src="{{ url_for('static', filename='images/RedesSociales.png') }}" alt="Internet Activa"/> 
+	</div>
 
   </div>
   <!-- #bg end -->
