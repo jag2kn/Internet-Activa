@@ -122,7 +122,7 @@ def save_post():
     if form.validate_on_submit():
         posts = q.filter('title =', form.title.data)
         if posts.count() == 0:
-            return render_template('error.html', mensaje="No se encontró el post editado")
+            return render_template('error.html', mensaje="No se encontro el post editado")
         else:
             post = posts[0]
             db.delete(post.key())
