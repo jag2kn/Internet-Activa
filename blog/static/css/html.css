@@ -110,12 +110,10 @@ ul li {
 }
 
 ol li {
-  font-weight: bold;
-  color: #668FA3;
+  color: #333333;
 }
 
 ol li span {
-  font-weight: normal;
   color: #444;
 }
 

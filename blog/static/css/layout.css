@@ -64,7 +64,7 @@
 }
 
 #menu1 ul {
-  margin: 0px 0 0 0;
+  margin: 0 20px 0 0;
   padding: 0;
   float: right;
 }
@@ -126,7 +126,7 @@
 }
 
 #menu ul {
-  width: 700px;
+  width: 780px;
   float: right;
   margin: 0;
   padding: 45px 0 0;
@@ -141,7 +141,7 @@
 }
 
 #menu ul li a {
-  float: right;
+  float: left;
   font: 400 1.2em Verdana, arial;
   letter-spacing: 0.1em;
   margin: 0 5px;
@@ -213,8 +213,13 @@
 }
 
 
-
-
+.cuadroRedes{
+    border: 1px solid #650C12;
+    border-radius: 10px 10px 10px 10px;
+    margin: 10px 0;
+    padding: 10px;
+    text-align:center;
+}
 /**************************************************************
    Page Content
  **************************************************************/
@@ -232,6 +237,9 @@
   margin: 0 auto;
 }
 
+.contenidoPrincipal{
+    overflow:auto;
+}
 
 /* Column widths */
 .width {
@@ -243,7 +251,7 @@
 }
 
 .width25 {
-  width: 19%;
+  width: 270px;
 }
 
 .width50 {
@@ -251,7 +259,7 @@
 }
 
 .width73 {
-  width: 80%;
+  width: 710px;
 }
 
 .width75 {
@@ -462,7 +470,7 @@ ul.submenu2 li a {
   /* End hide from IE Mac */
 
   padding: 1px 5px 1px 20px;
-  border-left: 20px solid #650c12;
+  border-right: 20px solid #650c12;
 }
 
 ul.submenu1 li a {
@@ -470,7 +478,7 @@ ul.submenu1 li a {
 
 ul.submenu1 a:hover {
   color: #FF0000;
-  border-left: 20px solid #FF0000;
+  border-right: 20px solid #FF0000;
 }
 
 ul.submenu2 li a {
@@ -538,7 +546,7 @@ ul.submenu2 a:hover {
 }
 .infoModulo .texto{
     padding: 0 8px 0 0;
-    width: 360px;
+    width: 410px;
     color:#660914;
     float:right;
 }

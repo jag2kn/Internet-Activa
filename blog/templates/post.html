@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-<ul>
     <h1 id="">{{ post.title }}</h1>
     {{ post.content|safe }}
     <br/>
@@ -10,5 +9,4 @@
     
     <a href="/posts/edit/{{ post.title }}">Editar</a> | 
     <a href="/posts/del/{{ post.title }}">Borrar</a>
-</ul>
 {% endblock %}

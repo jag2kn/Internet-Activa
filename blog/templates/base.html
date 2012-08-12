@@ -2,28 +2,7 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
-<head>
-
-
-  <title>{% block title %}Internet Activa{% endblock %}</title>
-
-  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-  <meta name="author" content="fullahead.org - studio7designs.com" />
-  <meta name="description" content="Site Description Here" />
-  <meta name="keywords" content="keywords, here" />
-  <meta name="robots" content="index, follow, noarchive" />
-  <meta name="googlebot" content="noarchive" />
-
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/layout.css') }}" media="screen, projection, tv " />
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/html.css') }}" media="screen, projection, tv " />
-  <link type="text/css" href="{{ url_for('static', filename='css/ui-lightness/jquery-ui-1.8.22.custom.css') }}" rel="stylesheet" />
-  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.7.2.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-ui-1.8.22.custom.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='js/tiny_mce/jquery.tinymce.js') }}"></script>  
-
-</head>
-
+{% include 'header.html' %}
 <body>
 
 <!-- #content: holds all except site footer - causes footer to stick to bottom -->
@@ -38,50 +17,30 @@
       </a>
     </div>
     <div id="menu1">
-
+      {% if d['usuario']%}
+          Saludos {{ d['usuario'] }}
+      {% endif%}
       <ul>
-        <li><a href="/">Pagina inicial</a></li>
-        <li><a href="/nosotros">Acerca de nosotros</a></li>
-        <li><a href="/recursos">Recursos</a></li>
-        <li><a href="/contacto" class="last">Contacto</a></li>
+            {% for href, texto in d['menu1'] %}
+                <li><a href="{{href}}" onfocus="blur()"><span>{{texto}}</span></a></li>
+            {% endfor %}
       </ul>
     </div>
     
 
     <!-- #menu: the main large box site menu -->
     <div id="menu">
-
-      <ul>
-        <li>
-          <a href="/contacto" onfocus="blur()">
-            <span class="title ">Contacto</span>
-          </a>
-        </li>
-        <li>
-          <a href="/modulo/3" onfocus="blur()">
-            <span class="title ">Módulo 3</span>
-                  </a>      </li>
-        <li>
-          <a href="/modulo/2" onfocus="blur()">
-            <span class="title ">Módulo 2</span>
-                  </a>      </li>
-        <li>
-          <a href="/modulo/1" onfocus="blur()">
-            <span class="title ">Módulo 1</span>
-                  </a>      </li>
-      </ul>
+        <ul>
+            {% for href, texto in d['menu2'] %}
+                <li><a href="{{href}}" onfocus="blur()"><span>{{texto}}</span></a></li>
+            {% endfor %}
+        </ul>
 
     </div>
     <!-- #menu end -->    
 
   </div>
   <!-- #header end -->
-
-
-
-
-
-
 
   <!-- #page: holds the page content -->
   <div id="page">
@@ -91,41 +50,46 @@
     <div id="columns" class="widthPad">
 
 
-    <!-- Left column -->
-    <div class="floatLeft width25 horzPad">
+        <!-- Left column -->
+        <div class="floatLeft width73 horzPad contenidoPrincial">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash">
+                         {% for message in messages %}
+                            <p>{{ message }}</p>
+                         {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            {% block content %}
+
+            {% endblock %}
+        </div>
+        <!-- Left column end -->
 
 
-      <ul class="submenu1">
-        <li><a href="/nosotros">Sobre Nosotros</a></li>
-        <li><a href="{{ url_for('list_posts') }}">Todos las entradas</a></li>
-        <li><a href="{{ url_for('new_post') }}">Nuevo articulo</a></li>
-      </ul>
-
-
-
-    </div>
-    <!-- Left column end -->
-
-
-    <!-- Right link column -->
-    <div class="floatRight width73">
-
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <div class="flash">
-                     {% for message in messages %}
-                        <p>{{ message }}</p>
-                     {% endfor %}
-                </div>
-            {% endif %}
-        {% endwith %}
-
-        {% block content %}
-
-        {% endblock %}
-
-    </div>
-    <!-- Right links column end -->
+        <!-- Right link column -->
+        <div class="floatRight width25">
+          <ul class="submenu1">
+                {% for href, texto in d['menu3'] %}
+                    <li><a href="{{href}}"><span>{{texto}}</span></a></li>
+                {% endfor %}
+          </ul>
+          <div class="cuadroRedes">
+            {% include 'redes_sociales/google_plus.html' %}
+          </div>
+          <div class="cuadroRedes">
+            {% include 'redes_sociales/twitter.html' %}
+          </div>
+          <div class="cuadroRedes">
+            {% include 'redes_sociales/facebook.html' %}
+          </div>
+          <div class="cuadroRedes">
+            {% include 'patrocinios.html' %}
+          </div>
+        </div>
+        <!-- Right links column end -->
 
 
 
@@ -140,24 +104,7 @@
 
 
 
-
-<!-- #footer: holds the site footer (logo and links) -->
-<div id="footer">
-
-  <!-- #bg: applies the site width and footer background -->
-  <div id="bg" class="width">
-	<div class="floatLeft">
-		internet<strong>ACTIVA</strong> | Bogotá | Calle falsa 123 | (571) 1234567
-	</div>
-	<div class="floatRight">
-      <img src="{{ url_for('static', filename='images/RedesSociales.png') }}" alt="Internet Activa"/> 
-	</div>
-
-  </div>
-  <!-- #bg end -->
-
-</div>
-<!-- #footer end -->
+{% include 'footer.html' %}
 <!-- Template by STUDIO7DESIGNS http://www.studio7designs.com-->
 
 </body>

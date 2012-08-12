@@ -1,13 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<ul>
     <h1>Todas las entradas</h1>
     {% for post in posts %}
         <h2><a href="{{ post.title }}">{{ post.title }}</a></h2>
         (Escrita por {{ post.author.nickname() }})<br />
-        {{ post.content|truncate(250)|safe }}
+        {{ post.content|truncate(100)|safe }}
         <a href="{{ post.title }}">Ver completo</a>
     {% endfor %}
-</ul>
 {% endblock %}
