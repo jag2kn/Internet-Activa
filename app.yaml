@@ -1,5 +1,5 @@
 application: internetactiva
-version: 2
+version: 2-1
 runtime: python
 api_version: 1
 
@@ -10,5 +10,16 @@ handlers:
 - url: /static
   static_dir: static
 
-  
+admin_console:
+  pages:
+  - name: Agregar contenido
+    url: /posts/new
+  - name: Editar contenido
+    url: /posts/edit
+  - name: Salvar (edicion) contenido
+    url: /posts/save
+  - name: Borrar contenido
+    url: /posts/delete
+  - name: Borra (del) contenido
+    url: /posts/del
 

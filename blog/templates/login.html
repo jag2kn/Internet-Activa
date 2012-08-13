@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Ingreso con Openid</h1>
+
+    {% for href, texto in links %}
+        <li><a href="{{href}}" onfocus="blur()"><span>{{texto}}</span></a></li>
+    {% endfor %}
+{% endblock %}

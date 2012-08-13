@@ -220,6 +220,52 @@
     padding: 10px;
     text-align:center;
 }
+.redsocial{
+    overflow:hidden;
+    width:248px;
+}
+.redsocialpie{
+}
+
+
+.patrocinio{
+    margin: 10px;
+    border: 0px;
+}
+
+.etiqueta{
+    background-color: #E0EAF1;
+    border-bottom: 1px solid #3E6D8E;
+    border-right: 1px solid #7F9FB6;
+    color: #3E6D8E;
+    font-size: 90%;
+    line-height: 2.4;
+    margin: 2px 2px 2px 0;
+    padding: 3px 4px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.list_posts{
+}
+
+.list_posts > .entrada{
+    border: 1px solid #650c12;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+}
+
+.list_posts > .entrada .titulo{
+    text-transform: uppercase;
+    background-color: lightgray;
+    border: 1px solid gray;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 10px;
+}
+
 /**************************************************************
    Page Content
  **************************************************************/
@@ -230,7 +276,7 @@
   width: 100%;
   margin-bottom: 100px;
   margin-top: 25px;
-  text-align: left;
+  text-align:justify;
 }
 
 #columns {
@@ -282,6 +328,31 @@
   width: 100%;
   height: 5em;
   margin-top: -5em;
+  border-top: 1px solid gray;
+}
+
+
+#footer #bg1 ul {
+  float: right;
+  padding: 0;
+}
+#footer #bg1 > div { 
+    border-bottom: 1px dotted gray;
+    color: gray;
+    margin:5px 0;
+}
+
+#footer #bg a:hover {
+  color: #CC2437;
+}
+
+
+#footer #bg1 ul li {
+  display: inline;
+  list-style: none;
+}
+#footer #bg1 {
+  margin: 0 auto;
 }
 
 #footer #bg {
@@ -319,7 +390,7 @@
 }
 
 #footer #bg ul li a:hover {
-  color: #F26A92;
+  color: #CC2437;
 }
 
 
@@ -537,6 +608,7 @@ ul.submenu2 a:hover {
    top: 10px;
    position: relative;
    float:left;
+   z-index: 9999;
 }
 .infoModulo .numero div{
     left: -12px;
@@ -566,9 +638,14 @@ ul.submenu2 a:hover {
   line-height: 1.5em;
 }
 .infoModulo{
-    height: 100px;
+}
+.infoModulo > .contenedor{
 	border: 2px solid #660914;
 	background-color: #f2da9c;
+    left: -80px;
+    overflow: hidden;
+    position: relative;
+    width: 600px;
 }
 
 

@@ -5,6 +5,9 @@
     {{ post.content|safe }}
     <br/>
     (Escrita por {{ post.author.nickname() }})
+    {% for etiqueta in post.etiquetas %}
+        <a class="etiqueta" href="/tag/{{ etiqueta }}">{{ etiqueta }}</a>
+    {% endfor %}
     <br/>
     
     <a href="/posts/edit/{{ post.title }}">Editar</a> | 

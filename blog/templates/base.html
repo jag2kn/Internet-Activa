@@ -68,7 +68,6 @@
         </div>
         <!-- Left column end -->
 
-
         <!-- Right link column -->
         <div class="floatRight width25">
           <ul class="submenu1">
@@ -76,6 +75,7 @@
                     <li><a href="{{href}}"><span>{{texto}}</span></a></li>
                 {% endfor %}
           </ul>
+{% if not d['servidor'] == 'localhost' %}
           <div class="cuadroRedes">
             {% include 'redes_sociales/google_plus.html' %}
           </div>
@@ -88,9 +88,9 @@
           <div class="cuadroRedes">
             {% include 'patrocinios.html' %}
           </div>
+{% endif %}
         </div>
         <!-- Right links column end -->
-
 
 
     </div>

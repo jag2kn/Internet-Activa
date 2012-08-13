@@ -2,12 +2,29 @@
 <div id="footer">
 
   <!-- #bg: applies the site width and footer background -->
+  <div id="bg1" class="width">
+       <div style="overflow:hidden;">
+        {% for href, texto in d['menu2'] %} |
+            <span><a href="{{href}}" onfocus="blur()">{{texto}}</a></span> |
+        {% endfor %}
+       </div>
+       <div style="overflow:hidden;"> |
+            {% for href, texto in d['menu1'] %}
+                <span><a href="{{href}}" onfocus="blur()">{{texto}}</a></span> |
+            {% endfor %}
+       </div>
+
+  </div>
+
+
   <div id="bg" class="width">
 	<div class="floatLeft">
 		internet<strong>ACTIVA</strong> | Bogotá | Calle falsa 123 | (571) 1234567
 	</div>
 	<div class="floatRight">
-{% include 'redes_sociales/pie_redes.html' %}
+{% if not d['servidor'] == 'localhost' %}
+    {% include 'redes_sociales/pie_redes.html' %}
+{% endif %}
 	</div>
 
   </div>
