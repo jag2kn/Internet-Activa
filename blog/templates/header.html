@@ -1,22 +1,145 @@
-<head>
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <div class="imagenLogo">
+      <a href="/">
+        <img border=0 src="{{ url_for('static', filename='images/Logo.png') }}" alt="Internet Activa"/> 
+      </a>
+    </div>
 
 
-  <title>{% block title %}Internet Activa{% endblock %}</title>
+<ul class="contenedorLinks" id="menuDesplegable">
+	<li class="menu linkModulos">
+		<div class="dropdown_1column sobre">
+                <div class="col_1">
+                    <ul class="simple">
+                        <li>
+                            <div class="linkModulo">
+                                <a href="/Curr%C3%ADculo%20del%20primer%20curso">
+                                    <div class="titulo">Curriculo</div>
+                                </a>
+                            </div>
+                        </li>
+                    {% for i, modulo in d['modulos'].items() %}
+                        <li>
+                            <div class="linkModulo">
+                                <a href="/modulo/{{ i }}">
+                                    <div class="titulo">{{ modulo['titulo'] }}</div>
+                                    <div class="descripcion">{{ modulo['autor'] }} {{ modulo['institucion'] }}</div>
+                                </a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                    </ul>   
+                </div>
+		</div>
+	</li>
+	<li class="menu linkAuditorios">
+		<div class="dropdown_1column sobre">
+                <div class="col_1">
+                    <ul class="simple">
+                        <li>
+                            <div class="linkAuditorio">
+                                <a href="/Auditorios">
+                                    <div class="titulo">Auditorios</div>
+                                </a>
+                            </div>
+                        </li>
+                    {% for i, auditorio in d['auditorios'].items() %}
+                        <li>
+                            <div class="linkAuditorio">
+                                <a href="/auditorio/{{ auditorio['titulo'] }}">
+                                    <div class="titulo">{{ auditorio['titulo'] }}</div>
+                                    <div class="descripcion">{{ auditorio['autor'] }} {{ auditorio['institucion'] }}</div>
+                                </a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                    </ul>   
+                </div>
+		</div>
+	</li>
+	<li class="menu linkTalleres">
+		<div class="dropdown_1column sobre">
+                <div class="col_1">
+                    <ul class="simple">
+            {% for i, taller in d['talleres'].items() %}
+                <li>
+                    <div class="linkTaller">
+                        <a href="/taller/{{ i }}">
+                            <div class="titulo">{{ taller['titulo'] }}</div>
+                            <div class="descripcion">{{ taller['autor'] }} {{ taller['institucion'] }}</div>
+                        </a>
+                    </div>
+                </li>
+            {% endfor %}
+                    </ul>   
+                </div>
+		</div>
+	</li>
+	<li class="menu linkCompartir">
+		<div class="dropdown_1column sobre">
+                <div class="col_1">
+                    <ul class="simple">
+                        <li><a target=_blank href="
+https://plus.google.com/share?url={{d['url']}}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><div class="cLogo"><img class="iLogo" src="{{ url_for('static', filename='images/Logos/m_google.png') }}" /><div class="mLogo">
+                            En Google+</div></div></a></li>
+                        <li><a target=_blank href="
+http://twitter.com/intent/tweet?source=internetactiva&text={{d['titulo']}} {{d['descripcion']}} {{ d['url'] }}&url={{ d['url'] }}"><div class="cLogo"><img class="iLogo" src="{{ url_for('static', filename='images/Logos/m_twitter.png') }}" /><div class="mLogo">
+                            En Twitter</div></div></a></li>
+{#                        <li><a target=_blank href="#"><div class="cLogo"><img class="iLogo" src="{{ url_for('static', filename='images/Logos/m_pinterest.png') }}" /><div class="mLogo">
+                            En Pinterest</div></div></a></li> #}
+                        <li><a target=_blank href="
+http://www.tumblr.com/share/link?url={{d['url']}}&name={{d['titulo']}}&description={{d['descripcion']}}"><div class="cLogo"><img class="iLogo" src="{{ url_for('static', filename='images/Logos/m_tumblr.png') }}" /><div class="mLogo">
+                            En Tumblr</div></div></a></li>
+                        <li><a target=_blank href="
+http://www.facebook.com/sharer/sharer.php?u={{d['url']}}&t={{d['titulo']}}&src=sp"><div class="cLogo"><img class="iLogo" src="{{ url_for('static', filename='images/Logos/m_facebook.png') }}" /><div class="mLogo">
+                            En Facebook</div></div></a></li>
+                    </ul>   
+                </div>
+		</div>
+	</li>
+</ul>
 
-  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-  <meta name="author" content="jag2kn" />
-  <meta name="description" content="Internet activa, " />
-  <meta name="keywords" content="internet, activismo, redes sociales, libertad, libertades civiles, comunicaciones" />
-  <meta name="robots" content="index, follow, noarchive" />
-  <meta name="googlebot" content="noarchive" />
-  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" />
+	
+<div class="ImagenCabecera">
+    <ul class="slides">
+        <li><img style="margin-top:-61px;" src="{{ url_for('static', filename=d['imagenCabecera']) }}" /></li>
+    </ul>
+</div>
+{#
+<script>
+$(window).load(function() {
+	/*$('.ImagenCabecera').blueberry();*/
+});
+</script>
+#}
 
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/layout.css') }}" media="screen, projection, tv " />
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/html.css') }}" media="screen, projection, tv " />
-  <link type="text/css" href="{{ url_for('static', filename='css/ui-lightness/jquery-ui-1.8.22.custom.css') }}" rel="stylesheet" />
-  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.7.2.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-ui-1.8.22.custom.min.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='js/tiny_mce/jquery.tinymce.js') }}"></script>  
 
-</head>
+{#    
+    <div id="menu1">
+      {% if d['usuario']%}
+          Saludos {{ d['usuario'] }}
+      {% endif%}
+      <ul>
+            {% for href, texto in d['modulos'] %}
+                <li><a href="{{href}}" onfocus="blur()"><span>{{texto}}</span></a></li>
+            {% endfor %}
+      </ul>
+    </div>
+    
+    <!-- #menu: the main large box site menu -->
+    <div id="menu">
+        <ul>
+            {% for href, texto in d['menu2'] %}
+                <li><a href="{{href}}" onfocus="blur()"><span>{{texto}}</span></a></li>
+            {% endfor %}
+        </ul>
+
+    </div>
+    <!-- #menu end -->    
+#}
+
+  </div>
+  <!-- #header end -->
 

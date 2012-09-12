@@ -1,0 +1,223 @@
+
+#menuDesplegable {
+	list-style:none;
+    margin: 0px;
+    color:#FFFFFF;
+}
+
+#menuDesplegable li {
+	float:left;
+	display:block;
+	text-align:center;
+	position:relative;
+	border:none;
+}
+
+#menuDesplegable li:hover {
+	
+}
+
+#menuDesplegable li a {
+	display:block;
+	outline:0;
+	text-decoration:none;
+}
+
+#menuDesplegable li:hover a {
+	color:#161616;
+}
+#menuDesplegable li .drop {
+	padding-right:21px;
+	background:url("../images/drop.png") no-repeat right 8px;
+}
+#menuDesplegable li:hover .drop {
+	background:url("../images/drop.png") no-repeat right 7px;
+}
+
+.dropdown_1column, 
+.dropdown_2columns, 
+.dropdown_3columns, 
+.dropdown_4columns,
+.dropdown_5columns {
+	margin:4px auto;
+	float:left;
+	position:absolute;
+	left:-999em; /* Hides the drop down */
+	text-align:left;
+	padding:10px 5px 10px 5px;
+	border-top:none;
+	
+	/* Gradient background */
+	background-color:rgba(0,0,0,0.9);
+
+}
+
+.dropdown_1column {width: 220px;}
+.dropdown_2columns {width: 280px;}
+.dropdown_3columns {width: 420px;}
+.dropdown_4columns {width: 560px;}
+.dropdown_5columns {width: 700px;}
+
+#menuDesplegable li:hover .dropdown_1column, 
+#menuDesplegable li:hover .dropdown_2columns, 
+#menuDesplegable li:hover .dropdown_3columns,
+#menuDesplegable li:hover .dropdown_4columns,
+#menuDesplegable li:hover .dropdown_5columns {
+	left:0px;
+	top:75px;
+}
+
+.col_1,
+.col_2,
+.col_3,
+.col_4,
+.col_5 {
+	display:inline;
+	float: left;
+	position: relative;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.col_1 {width:210px;}
+.col_2 {width:270px;}
+.col_3 {width:410px;}
+.col_4 {width:550px;}
+.col_5 {width:690px;}
+
+#menuDesplegable .menu_right {
+	float:right;
+	margin-right:0px;
+}
+#menuDesplegable li .align_right {
+	/* Rounded Corners */
+	-moz-border-radius: 5px 0px 5px 5px;
+    -webkit-border-radius: 5px 0px 5px 5px;
+    border-radius: 5px 0px 5px 5px;
+}
+
+#menuDesplegable li:hover .align_right {
+	left:auto;
+	right:0px;
+	top:auto;
+}
+
+#menuDesplegable p, #menuDesplegable h2, #menuDesplegable h3, #menuDesplegable ul li {
+	font-family:Arial, Helvetica, sans-serif;
+	line-height:21px;
+	font-size:12px;
+	text-align:left;
+}
+#menuDesplegable h2 {
+	font-size:21px;
+	font-weight:400;
+	letter-spacing:-1px;
+	margin:7px 0 14px 0;
+	padding-bottom:14px;
+	border-bottom:1px solid #666666;
+}
+#menuDesplegable h3 {
+	font-size:14px;
+	margin:7px 0 14px 0;
+	padding-bottom:7px;
+	border-bottom:1px solid #888888;
+}
+#menuDesplegable p {
+	line-height:18px;
+	margin:0 0 10px 0;
+}
+
+#menuDesplegable li:hover div a {
+	font-size:12px;
+	color:#FFFFFF;
+}
+#menuDesplegable li:hover div a:hover {
+	color:#FFFFFF;
+}
+
+
+.strong {
+	font-weight:bold;
+}
+.italic {
+	font-style:italic;
+}
+
+.imgshadow { /* Better style on light background */
+	background:#FFFFFF;
+	padding:4px;
+	border:1px solid #777777;
+	margin-top:5px;
+	-moz-box-shadow:0px 0px 5px #666666;
+	-webkit-box-shadow:0px 0px 5px #666666;
+	box-shadow:0px 0px 5px #666666;
+}
+.img_left { /* Image sticks to the left */
+	width:auto;
+	float:left;
+	margin:5px 15px 5px 5px;
+}
+
+#menuDesplegable li .black_box {
+	background-color:#333333;
+	color: #eeeeee;
+	padding:4px 6px 4px 6px;
+
+	/* Rounded Corners */
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
+	/* Shadow */
+	-webkit-box-shadow:inset 0 0 3px #000000;
+	-moz-box-shadow:inset 0 0 3px #000000;
+	box-shadow:inset 0 0 3px #000000;
+}
+
+#menuDesplegable li ul {
+	list-style:none;
+	padding:0;
+	margin:0 0 12px 0;
+}
+#menuDesplegable li ul li {
+	font-size:12px;
+	line-height:24px;
+	position:relative;
+	padding:0;
+	margin:5px 0;
+	float:none;
+	text-align:left;
+/*	width:130px;*/
+}
+#menuDesplegable li ul li:hover {
+	background:none;
+	border:none;
+	padding:0;
+	margin:5px 0;
+}
+
+#menuDesplegable li .greybox li {
+	background:#F4F4F4;
+	border:1px solid #bbbbbb;
+	margin:0px 0px 4px 0px;
+	padding:4px 6px 4px 6px;
+	width:116px;
+
+	/* Rounded Corners */
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+#menuDesplegable li .greybox li:hover {
+	background:#ffffff;
+	border:1px solid #aaaaaa;
+	padding:4px 6px 4px 6px;
+	margin:0px 0px 4px 0px;
+}
+
+
+.sobre{
+    position: relative;
+    z-index: 10000;
+}
+

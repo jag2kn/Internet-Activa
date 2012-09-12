@@ -4,7 +4,7 @@
     <div class="list_posts">
     {% for post in posts %}
         <div class="entrada">
-            <div class="titulo"><a href="/{{ post.title }}">{{ post.title }}</a></div>
+            <h1><a href="/{{ post.title }}">{{ post.title }}</a></h1>
             (Escrita por {{ post.author.nickname() }})<br />
             {{ post.content|truncate(512)|safe }}
             <a href="/{{ post.title }}">Ver completo</a>

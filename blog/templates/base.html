@@ -2,56 +2,36 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-{% include 'header.html' %}
+{% include 'head.html' %}
 <body>
 
 <!-- #content: holds all except site footer - causes footer to stick to bottom -->
-<div id="fondoPagina">
+<div id="fondoPagina" class="width">
 
-  <!-- #header: holds the logo and top links -->
-  <div id="header" class="width">
-
-    <div class="imagenLogo">
-      <a href="/">
-        <img border=0 src="{{ url_for('static', filename='images/Logo.png') }}" alt="Internet Activa"/> 
-      </a>
-    </div>
-    <div id="menu1">
-      {% if d['usuario']%}
-          Saludos {{ d['usuario'] }}
-      {% endif%}
-      <ul>
-            {% for href, texto in d['menu1'] %}
-                <li><a href="{{href}}" onfocus="blur()"><span>{{texto}}</span></a></li>
-            {% endfor %}
-      </ul>
-    </div>
-    
-
-    <!-- #menu: the main large box site menu -->
-    <div id="menu">
-        <ul>
-            {% for href, texto in d['menu2'] %}
-                <li><a href="{{href}}" onfocus="blur()"><span>{{texto}}</span></a></li>
-            {% endfor %}
-        </ul>
-
-    </div>
-    <!-- #menu end -->    
-
-  </div>
-  <!-- #header end -->
+{% include 'header.html' %}
 
   <!-- #page: holds the page content -->
   <div id="page">
 
-
     <!-- #columns: holds the columns of the page -->
-    <div id="columns" class="widthPad">
 
 
         <!-- Left column -->
-        <div class="floatLeft width73 horzPad contenidoPrincial">
+    <div id="columns" class="widthPad">
+        <div class="floatLeft width73 horzPad contenidoPrincipal">
+          <div class="contenido">
+                <div class="Recuadros">
+                        <div class="cuadro cuadro1">
+                            <img src="{{ url_for('static', filename='images/CursoInaugural.png') }}" />
+                        </div>
+                        <div class="cuadro cuadro2">
+                            <img src="{{ url_for('static', filename='images/Desarrollo.png') }}" />
+                        </div>
+                        <div class="cuadro cuadro3">
+                            <img src="{{ url_for('static', filename='images/Intensidad.png') }}" />
+                        </div>
+                </div>
+                <div class="contenidoPagina">
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     <div class="flash">
@@ -65,28 +45,34 @@
             {% block content %}
 
             {% endblock %}
+                </div>
+
+          </div>
+          <div class="cuadroRedes2">
+            {% include 'patrocinios.html' %}
+          </div>
+
+        </div>
+
         </div>
         <!-- Left column end -->
 
         <!-- Right link column -->
-        <div class="floatRight width25">
+        <div class="floatRight columnaDerecha">
+          <div class="cuadroRedes">
+            {% include 'redes_sociales/twitter.html' %}
+          </div>
           <ul class="submenu1">
                 {% for href, texto in d['menu3'] %}
                     <li><a href="{{href}}"><span>{{texto}}</span></a></li>
                 {% endfor %}
           </ul>
-{% if not d['servidor'] == 'localhost' %}
+{% if d['servidor'] == 'localhost1' %}
           <div class="cuadroRedes">
             {% include 'redes_sociales/google_plus.html' %}
           </div>
           <div class="cuadroRedes">
-            {% include 'redes_sociales/twitter.html' %}
-          </div>
-          <div class="cuadroRedes">
             {% include 'redes_sociales/facebook.html' %}
-          </div>
-          <div class="cuadroRedes">
-            {% include 'patrocinios.html' %}
           </div>
 {% endif %}
         </div>
@@ -102,10 +88,8 @@
 </div>
 <!-- #content end -->
 
-
-
 {% include 'footer.html' %}
-<!-- Template by STUDIO7DESIGNS http://www.studio7designs.com-->
+
 
 </body>
 

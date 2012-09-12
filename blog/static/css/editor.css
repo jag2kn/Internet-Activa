@@ -15,11 +15,11 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background: #000000;
+  background: #ffffff;
   font: 400 0.7em verdana, arial;
   line-height: 170%;
   
-  color: #000000;
+  color: #555;
 }
 
 #tinymce{
@@ -28,19 +28,16 @@ body {
 
 /* Headers */
 h1, h2, h3, h4, h5, h6 {
-    text-transform: uppercase;
-    font-weight: bold;
-    text-decoration: underline;
-    color: #D27E00 !important;
-}
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-    color: #D27E00 !important;
+  margin: 0 0 0px 0;
+  padding: 0;
+  border-bottom: 1px solid #650c12;
+  color:#650c12;
 }
 
 
 h1 {
   padding-bottom: 0.2em;
-  font: 700 1.6em verdana, arial;
+  font: 400 1.6em verdana, arial;
 }
 
 h2 {
@@ -76,11 +73,11 @@ h5 {
 /* Links */
 a {
   text-decoration: none;
-  color: #803333;
+  color: #650c12;
 }
 
 a:hover {
-  color: #FF3333;
+  color: #FF0000;
 }
 
 a img {

@@ -1,5 +1,5 @@
 <!-- #footer: holds the site footer (logo and links) -->
-<div id="footer">
+<div id="footer" class="width">
 
   <!-- #bg: applies the site width and footer background -->
   <div id="bg1" class="width">
@@ -18,11 +18,8 @@
 
 
   <div id="bg" class="width">
-	<div class="floatLeft">
-		internet<strong>ACTIVA</strong> | Bogotá | Calle falsa 123 | (571) 1234567
-	</div>
 	<div class="floatRight">
-{% if not d['servidor'] == 'localhost' %}
+{% if d['servidor'] == 'localhost2' %}
     {% include 'redes_sociales/pie_redes.html' %}
 {% endif %}
 	</div>
